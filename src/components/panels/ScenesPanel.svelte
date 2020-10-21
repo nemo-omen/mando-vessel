@@ -12,7 +12,6 @@
 	.panel {
 		left: 33.3%;
 		right: 33.3%;
-		border-right: 1px solid var(--gray-900);
-
+		/* border-right: 1px solid var(--gray-900); */
 	}
 </style>

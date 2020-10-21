@@ -23,5 +23,6 @@
 <style>
 	.panel {
 		right: 0%;
+		left: 66.6%;
 	}
 </style>

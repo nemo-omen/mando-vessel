@@ -146,7 +146,7 @@
 		background-color: var(--gray-900);
 	}
 	::-webkit-scrollbar-track {
-		background-color: var(--dark-gray);
+		background-color: var(--dark-gray-800);
 	}
 	.graphic-form-header {
 		display: flex;

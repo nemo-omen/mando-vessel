@@ -38,7 +38,7 @@
 <style>
 	.panel {
 		left: 0;
-		border-right: 1px solid var(--gray-900);
+		/* border-right: 1px solid var(--gray-900); */
 	}
 	.panel-header h3 {
 		margin: 0;
