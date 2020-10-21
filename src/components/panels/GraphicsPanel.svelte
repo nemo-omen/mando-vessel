@@ -20,7 +20,7 @@
 	<header class="panel-header">
 		<h3>Graphics</h3>
 		<div class="header-right">
-			<div class="add-graphic-button" on:click={showGraphicForm}>
+			<div class="add-graphic-button" on:click={showGraphicForm} title="Quick Create">
 				<PlusCircleIcon size="24" class="circle-icon" />
 			</div>
 		</div>

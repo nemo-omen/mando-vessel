@@ -127,6 +127,7 @@
 		color: var(--gray-100);
 		position: absolute;
 		top: 6em;
+		padding-top: 1em;
 		right: 33.3%;
 		bottom: 0;
 		left: 0;
@@ -151,7 +152,7 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		padding: 1em 1em 0 1em;
+		padding: 0 1em;
 	}
 	.header-icon-container {
 		color: var(--blue-700);
