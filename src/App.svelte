@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import {fade} from 'svelte/transition';
 	import { socket } from './socket.js';
-	
+
 	export let name;
 
 	$: graphics = [];
@@ -40,20 +40,11 @@
         ],
 	}
 
-	socket.on('graphics', (data) => {
-		console.log('graphics event data: ', data);
-		updateGraphics();
-	});
-
-	socket.on('graphicsUpdates', (data) => {
-		console.log('graphicsUpdate: ', data);
-	})
-
 	async function updateGraphics() {
 		socket.get('/graphics', (body, response) => {
 			graphics = [...body];
 			console.log(graphics);
-			console.log('socket response: ', response);
+			console.log('updateGraphics socket response: ', response);
 		});
 	}
 
@@ -65,7 +56,15 @@
 			},
 			body: JSON.stringify(dummyGraphic),
 		});
-		const data = await response.json();
+	console.log('http POST response: ', response);
+	}
+
+	async function saveSocketGraphic() {
+		socket.post('/graphics', dummyGraphic, (resData, jwRes) => {
+			if(jwRes.statusCode === 200) {
+				updateGraphics();
+			}
+		});
 	}
 
 	async function deleteGraphic(id) {
@@ -75,6 +74,19 @@
 		});
 		const data = await response.json();
 	}
+
+	async function deleteSocketGraphic(id) {
+		socket.delete(`/graphics/${id}`, function(resData, jwRes) {
+			if(jwRes.statusCode === 200) {
+				updateGraphics();
+			}
+		});
+	}
+
+	socket.on('graphics', (data) => {
+		console.log('graphics event data: ', data);
+		updateGraphics();
+	});
 
 	onMount(async() => {
 		updateGraphics();
@@ -86,9 +98,10 @@
 		<img src="submarine.svg" alt="A Yellow Underwater Vessel" title="Vessel">
 	</div>
 	<h1>Hello {name}!</h1>
-	<button on:click={saveGraphic}>Add Another</button>
+	<button on:click={saveGraphic}>Add With Fetch</button>
+	<button on:click={saveSocketGraphic}>Add With Socket</button>
 	{#each graphics as graphic}
-		<h3 transition:fade={{duration:300}}>{graphic.type} <button on:click={() => deleteGraphic(graphic.id)}>Delete</button></h3>
+		<h3 transition:fade={{duration:300}}><button on:click={() => deleteSocketGraphic(graphic.id)}>Socket Delete</button> {graphic.type} <button on:click={() => deleteGraphic(graphic.id)}>Fetch Delete</button></h3>
 	{/each}
 </main>
 
