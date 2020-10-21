@@ -181,7 +181,17 @@ h5 {
   .panel {
     overflow-y: scroll;
     scrollbar-width: thin;
-		scrollbar-color: var(--gray-900) var(--dark-gray);
+    scrollbar-color: var(--gray-900) var(--dark-gray);
+    top: 6em;
+    bottom: 0;
+    width: 33.3%;
+    position: absolute;
+  }
+  .panel-header {
+    height: 4em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 	::-webkit-scrollbar {
 		width: 8px;

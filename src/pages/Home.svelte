@@ -19,7 +19,12 @@
 
 <div id="home">
 	<header class="home-header" on:click|stopPropagation={handleHeaderClick}>
-		<h1>Mando</h1>
+    <a href="/">
+		<div class="icon">
+      <img src="mando.svg" alt="Mando" title="Mando (esp.) - control, command, remote control"/>
+    </div>
+    </a>
+    <a href="/" title="Mando (esp.) - control, command, remote control"><h1 class="app-title">Mando</h1></a>
 	</header>
 	<section id="home-content">
 		<GraphicsPanel />
@@ -54,13 +59,37 @@
 		top: 0;
 		left: 0;
 		right: 0;
-		height: 5em;
+    height: 6em;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
 		margin-bottom: 1em;
 		background-color: var(--dark-gray-400);
 		border-bottom: 1px solid var(--gray-900);
 		padding: 1em;
-		box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
-	}
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
+    z-index: 300;
+  }
+  .home-header a .icon {
+    width: 4em;
+    height: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5em;
+  }
+  .icon img {
+    width: 4em;
+    height: 4em;
+  }
+  .home-header a {
+    text-decoration: none;
+    color: var(--amber);
+  }
+  .app-title {
+    font-size: 4em;
+    line-height: 1;
+  }
 	#home-content {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);

@@ -37,13 +37,7 @@
 
 <style>
 	.panel {
-		position: absolute;
 		left: 0;
-		width: 33.3%;
-		top: 5em;
-		bottom: 0;
-	}
-	.panel-header {
 		border-right: 1px solid var(--gray-900);
 	}
 	.panel-header h3 {

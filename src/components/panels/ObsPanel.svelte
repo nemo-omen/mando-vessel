@@ -22,10 +22,6 @@
 
 <style>
 	.panel {
-		position: absolute;
-		width: 33.3%;
 		right: 0%;
-		top: 5em;
-		bottom: 0;
 	}
 </style>

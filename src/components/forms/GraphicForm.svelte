@@ -126,7 +126,7 @@
 	.graphic-form {
 		color: var(--gray-100);
 		position: absolute;
-		top: 5em;
+		top: 6em;
 		right: 33.3%;
 		bottom: 0;
 		left: 0;
@@ -135,6 +135,7 @@
 		overflow-y: scroll;
 		scrollbar-width: thin;
 		scrollbar-color: var(--gray-900) var(--dark-gray);
+		z-index: 200;
 	}
 	::-webkit-scrollbar {
 		width: 8px;
