@@ -12,7 +12,7 @@ import { getGraphic, getAllGraphics, saveGraphic, deleteGraphic, updateGraphic }
 .########..##.....##..######..########.....######...##.....##.##.....##.##........##.....##.####..######.
 */
 
-class Graphic {
+export class Graphic {
   position = [2, 2];
   autoPlay = false;
   entranceAnimation = {type: 'fade', duration: 500, delay: 0};
